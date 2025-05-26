@@ -1,0 +1,53 @@
+<!-- redirect_test_cases.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection Test Cases</title>
+
+  <!-- Case 1: Meta Refresh -->
+  <meta http-equiv="refresh" content="0; url=https://case1.meta.com">
+
+  <!-- Case 2: location.href = "..." -->
+  <script>
+    location.href = "https://case2.href.com";
+  </script>
+
+  <!-- Case 3: location.replace("...") -->
+  <script>
+    location.replace("https://case3.replace.com");
+  </script>
+
+  <!-- Case 4: window.location.href = "..." -->
+  <script>
+    window.location.href = "https://case4.windowhref.com";
+  </script>
+
+  <!-- Case 5: document.location = "..." -->
+  <script>
+    document.location = "https://case5.document.com";
+  </script>
+
+  <!-- Case 6: setTimeout("location.href='...'") -->
+  <script>
+    setTimeout("location.href='https://case6.settimeout.com'", 1000);
+  </script>
+
+  <!-- Case 7: javascript:location.href in anchor -->
+  <a href="javascript:location.href='https://case7.anchor.com'">Anchor Redirect</a>
+
+  <!-- Case 8: atob base64 + location.href = decoded -->
+  <script>
+    const encoded = "aHR0cHM6Ly9jYXNlOC5hdG9iLmNvbQ==";
+    const decoded = atob(encoded);
+    location.href = decoded;
+  </script>
+
+  <!-- Case 9: base64 in iframe (data:text/html;base64) -->
+  <iframe src="data:text/html;base64,PHNjcmlwdD5sb2NhdGlvbi5ocmVmPSdodHRwczovL2Nhc2U5LmlmcmFtZS5jb20nPC9zY3JpcHQ+"></iframe>
+
+</head>
+<body>
+  <h1>Redirection Test Cases</h1>
+</body>
+</html>
