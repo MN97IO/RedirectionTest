@@ -1,1 +1,22 @@
-d
+<!-- redirect_test_cases.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection Test Cases</title>
+
+  <!-- Case 6: setTimeout("location.href='...'") (고급 분석이 필요한 구조) -->
+  <script>
+    const encoded = "aHR0cHM6Ly93d3cubmF2ZXIuY29t";
+    const decoded = atob(encoded);
+    const delayRedirect = () => {
+      location.href = decoded;
+    };
+    setTimeout(delayRedirect, 1000);
+  </script>
+
+</head>
+<body>
+  <h1>Redirection Test Cases</h1>
+</body>
+</html>
