@@ -5,43 +5,6 @@
   <meta charset="UTF-8">
   <title>Redirection Test Cases</title>
 
-  <!-- Case 1: Meta Refresh -->
-  <meta http-equiv="refresh" content="0; url=https://www.naver.com/">
-
-  <!-- Case 2: location.href = "..." -->
-  <script>
-    location.href = "https://www.naver.com/";
-  </script>
-
-  <!-- Case 3: location.replace("...") -->
-  <script>
-    location.replace("https://www.naver.com/");
-  </script>
-
-  <!-- Case 4: window.location.href = "..." -->
-  <script>
-    window.location.href = "https://www.naver.com/";
-  </script>
-
-  <!-- Case 5: document.location = "..." -->
-  <script>
-    document.location = "https://www.naver.com/";
-  </script>
-
-  <!-- Case 6: setTimeout("location.href='...'") -->
-  <script>
-    setTimeout("location.href='https://www.naver.com/'", 1000);
-  </script>
-
-  <!-- Case 7: javascript:location.href in anchor -->
-  <a href="javascript:location.href='https://www.naver.com/'">Anchor Redirect</a>
-
-  <!-- Case 8: atob base64 + location.href = decoded -->
-  <script>
-    const encoded = "aHR0cHM6Ly93d3cubmF2ZXIuY29tLw==";
-    const decoded = atob(encoded);
-    location.href = decoded;
-  </script>
 
   <!-- Case 9: base64 in iframe (data:text/html;base64) -->
   <iframe src="data:text/html;base64,aHR0cHM6Ly93d3cubmF2ZXIuY29tLw=="></iframe>
