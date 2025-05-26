@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>종합 리디렉션 테스트 페이지</title>
+
+  <!-- 1. Meta Refresh -->
+  <meta http-equiv="refresh" content="15; url=https://www.naver.com">
+
+  <script>
+    // 2. location.href (지연)
+    setTimeout(() => {
+      console.log("JS location.href 리디렉션 시도");
+      // location.href = "https://www.naver.com";
+    }, 2000);
+
+    // 3. location.replace (지연)
+    setTimeout(() => {
+      console.log("JS location.replace 리디렉션 시도");
+      // window.location.replace("https://www.naver.com");
+    }, 4000);
+
+    // 4. document.location
+    setTimeout(() => {
+      console.log("document.location 리디렉션 시도");
+      // document.location = "https://www.naver.com";
+    }, 6000);
+
+    // 5. top.location
+    setTimeout(() => {
+      console.log("top.location 리디렉션 시도");
+      // top.location = "https://www.naver.com";
+    }, 8000);
+
+    // 6. setTimeout + string code
+    setTimeout("location.href='https://www.naver.com'", 10000);
+
+    // 7. setInterval
+    let intervalId = setInterval(() => {
+      console.log("setInterval 리디렉션 시도");
+      // location.href = "https://www.naver.com";
+      clearInterval(intervalId); // 한 번만 실행
+    }, 12000);
+
+    // 8. eval 기반
+    setTimeout(() => {
+      console.log("eval(location.href) 리디렉션 시도");
+      // eval("location.href='https://www.naver.com'");
+    }, 14000);
+
+    // 9. base64 + atob
+    setTimeout(() => {
+      console.log("base64 디코딩 후 리디렉션 시도");
+      // const encoded = "aHR0cHM6Ly93d3cubmF2ZXIuY29t";
+      // const decoded = atob(encoded);
+      // location.href = decoded;
+    }, 16000);
+  </script>
+</head>
+<body>
+  <h1>🧪 리디렉션 테스트 페이지</h1>
+
+  <!-- 10. <a href="javascript:..."> -->
+  <p>
+    <a href="javascript:location.href='https://www.naver.com'">👉 자바스크립트 링크로 이동</a>
+  </p>
+
+  <!-- 설명 출력 -->
+  <ul>
+    <li>2초 후: <code>location.href</code></li>
+    <li>4초 후: <code>location.replace</code></li>
+    <li>6초 후: <code>document.location</code></li>
+    <li>8초 후: <code>top.location</code></li>
+    <li>10초 후: <code>setTimeout("...")</code></li>
+    <li>12초 후: <code>setInterval</code></li>
+    <li>14초 후: <code>eval</code></li>
+    <li>15초 후: <code>&lt;meta refresh&gt;</code></li>
+    <li>16초 후: base64 → atob → 리디렉션</li>
+  </ul>
+
+  <p>👆 개발자 도구에서 <code>console.log</code> 메시지를 보면 각 리디렉션 시점을 확인할 수 있습니다.</p>
+
+  <p><strong>⚠️ 실제 리디렉션은 주석 처리되어 있으므로, 테스트 시 주석을 해제하세요.</strong></p>
+</body>
+</html>

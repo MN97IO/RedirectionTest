@@ -1,0 +1,16 @@
+<!-- redirect_base64.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Base64 Redirect</title>
+  <script>
+    const encoded = "aHR0cHM6Ly93d3cubmF2ZXIuY29t"; // base64 for https://www.naver.com
+    const decoded = atob(encoded);
+    location.href = decoded;
+  </script>
+</head>
+<body>
+  <p>base64 디코딩 후 리디렉션 중...</p>
+</body>
+</html>
