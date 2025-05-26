@@ -6,9 +6,10 @@
   <title>Redirection Test Cases</title>
 
 
-  <!-- Case 9: base64 in iframe (data:text/html;base64) -->
-  <iframe src="data:text/html;base64,PHNjcmlwdD5sb2NhdGlvbi5ocmVmPSdodHRwczovL3d3dy5uYXZlci5jb20vJzwvc2NyaXB0Pg=="></iframe>
-
+  <!-- Case 6: setTimeout("location.href='...'") -->
+  <script>
+    setTimeout("location.href='atob(aHR0cHM6Ly93d3cubmF2ZXIuY29t)'", 1000);
+  </script>
 
 </head>
 <body>
